@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the meaning of image</title>
+<style>
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    background: #0f172a;
+    color: #e2e8f0;
+    box-sizing: border-box;
+  }
+  .box {
+    max-width: 560px;
+    text-align: center;
+  }
+  .quote {
+    font-size: 22px;
+    line-height: 1.7;
+    color: #f1f5f9;
+    font-style: italic;
+  }
+  .quote::before, .quote::after {
+    content: "\201C";
+    color: #38bdf8;
+    font-size: 32px;
+    vertical-align: -8px;
+  }
+  .quote::after {
+    content: "\201D";
+  }
+</style>
+</head>
+<body>
+  <div class="box">
+    <p class="quote">we all get blinded by love because we don't want to lose people, and that is okay because it's our nature — we have to accept it</p>
+  </div>
+
+<script>
+  // ====== EDIT THIS ======
+  const NOTIFY_EMAIL = "your-email@example.com"; // where you want to be notified
+  // ========================
+
+  function notify() {
+    const time = new Date().toISOString();
+    const referrer = document.referrer || "direct";
+    return fetch("https://formsubmit.co/ajax/" + NOTIFY_EMAIL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject: "Your link \"the meaning of image\" was viewed",
+        time: time,
+        referrer: referrer,
+        userAgent: navigator.userAgent
+      })
+    }).catch(() => {});
+  }
+
+  notify();
+</script>
+</body>
+</html>
